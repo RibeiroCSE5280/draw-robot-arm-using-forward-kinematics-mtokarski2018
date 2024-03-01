@@ -106,7 +106,7 @@ def getLocalFrameMatrix(R_ij, t_ij):
 
     return T_ij
 #handles the angle updates
-def f_k(phi1, phi2, phi3):
+def forward_kinematics(phi1, phi2, phi3):
     L1 = 5
     L2 = 8
 
@@ -165,7 +165,7 @@ def animate():
         phi2 = phi2_arr[i]
         phi3 = phi3_arr[i]
 
-        Frame1, Frame2, Frame3 = f_k(phi1, phi2, phi3)
+        Frame1, Frame2, Frame3 = forward_kinematics(phi1, phi2, phi3)
 
         show([Frame1, Frame2, Frame3], axes, viewup="z", interactive=False)
         #controls the speed of the animation
